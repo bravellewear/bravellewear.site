@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mersh Store</title>
+    <style>
+        /* Minimalista alapok */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fekete */
+            color: #bfff00; /* Lime */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Nyelvváltó a sarokban */
+        .lang-picker {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        select {
+            background: transparent;
+            color: #bfff00;
+            border: 1px solid #bfff00;
+            padding: 5px;
+            cursor: pointer;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        /* A központi gomb */
+        .buy-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: #bfff00; /* Lime */
+            color: #000000; /* Fekete szöveg */
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid #bfff00;
+        }
+
+        .buy-btn:hover {
+            background-color: #000000;
+            color: #bfff00;
+            box-shadow: 0 0 20px rgba(191, 255, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .buy-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nyelvválasztó -->
+    <div class="lang-picker">
+        <select id="langSwitch" onchange="updateLanguage()">
+            <option value="en">English</option>
+            <option value="hu">Magyar</option>
+        </select>
+    </div>
+
+    <!-- Gomb -->
+    <a href="https://www.vinted.com/member/177769180" class="buy-btn" id="mainBtn">
+        Buy our merch
+    </a>
+
+    <script>
+        function updateLanguage() {
+            const lang = document.getElementById('langSwitch').value;
+            const btn = document.getElementById('mainBtn');
+            
+            if (lang === 'hu') {
+                btn.innerText = 'Vedd meg a ruháinkat';
+            } else {
+                btn.innerText = 'Buy our merch';
+            }
+        }
+    </script>
+
+</body>
+</html>
