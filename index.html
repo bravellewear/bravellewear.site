@@ -7,48 +7,6 @@
 	<title>Bravellewear Store</title>
 
 	<style>
-		@media (max-width: 650px) {
-
-			.product-grid {
-				grid-template-columns: repeat(2, 1fr);
-				gap: 12px;
-				padding: 100px 10px 20px 10px;
-			}
-
-			.product-card {
-				border-radius: 16px;
-			}
-
-			.img-container {
-				height: 200px;
-			}
-
-			.img-container img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block; /* IMPORTANT */
-			}
-
-			.card-info {
-				padding: 12px;
-			}
-
-			.card-info h3 {
-				font-size: 0.95rem;
-			}
-
-			.card-info p {
-				font-size: 0.75rem;
-				margin-bottom: 8px;
-			}
-
-			.sub-btn {
-				padding: 8px;
-				font-size: 0.7rem;
-			}
-		}
-
 		:root {
 			--primary: #ff0000;
 			--bg: #000000;
@@ -84,14 +42,11 @@
 			outline: none;
 		}
 
-		/* OUR VINTED LINK */
-
 		.vinted-link {
 			position: absolute;
 			top: 50px;
-			left: 50%; /* A képernyő közepére teszi a bal szélét */
-			transform: translateX(-50%); /* Visszatolja a saját szélessége felével, így lesz pontos */
-				
+			left: 50%;
+			transform: translateX(-50%);
 			font-size: 2rem;
 			font-weight: 900;
 			letter-spacing: 2px;
@@ -106,14 +61,10 @@
 			align-items: center;
 		}
 
-
 		.vinted-link:hover {
 			color: #ff0000;
 			text-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
 		}
-
-
-		/* PRODUCT GRID */
 
 		.product-grid {
 			display: grid;
@@ -132,7 +83,35 @@
 
 		@media (max-width: 650px) {
 			.product-grid {
-				grid-template-columns: 1fr;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 15px;
+				padding: 100px 10px 10px 10px;
+			}
+
+			.img-container {
+				height: 200px;
+			}
+
+			.card-info {
+				padding: 15px;
+			}
+
+			.card-info h3 {
+				font-size: 1rem;
+			}
+
+			.card-info p {
+				font-size: 0.8rem;
+				margin-bottom: 15px;
+			}
+
+			.sub-btn {
+				padding: 10px;
+				font-size: 0.7rem;
+			}
+
+			.product-card {
+				border-radius: 16px;
 			}
 		}
 
@@ -240,128 +219,112 @@
 	</a>
 
 	<div class="product-grid">
-        
-                <!-- TRAPSTAR MEZ -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8385258848-trapstar-london-monogram-football-jersey" target="_blank">
-                    <img src="https://images1.vinted.net/t/06_0250c_7bepaYsgdEtQp6aW2PPVujUj/f800/1773515582.webp?s=a91eb3375aa38bcf701e53972986792b632525aa" class="zoom-jersey" alt="Trapstar Jersey">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Trapstar Jersey" data-hu="Trapstar Mez">Trapstar Jersey</h3>
-                <p>
-                    <span data-en="Size: S" data-hu="Méret: S">Size: S</span><br>
-                    <strong data-en="Price: $24.68" data-hu="Ár: 7 990 Ft">Price: $24.68</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8385258848-trapstar-london-monogram-football-jersey" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
 
-        <!-- DENIM TEARS PANTS -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8371240738-denim-tears-pants" target="_blank">
-                    <img src="https://images1.vinted.net/t/05_01e00_RsvWPAyBxWoBfAWr8rCNXHUc/f800/1773515696.webp?s=0aac31ca8e62940523a361b6bffff0936bf739db" class="zoom-pants" alt="Denim Tears Pants">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Denim Tears Pants" data-hu="Denim Tears Nadrág">Denim Tears Pants</h3>
-                <p>
-                    <span data-en="Size: M" data-hu="Méret: M">Size: M</span><br>
-                    <strong data-en="Price: $21.59" data-hu="Ár: 6 990 Ft">Price: $21.59</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8371240738-denim-tears-pants" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8385258848-trapstar-london-monogram-football-jersey" target="_blank">
+					<img src="https://images1.vinted.net/t/06_0250c_7bepaYsgdEtQp6aW2PPVujUj/f800/1773515582.webp?s=a91eb3375aa38bcf701e53972986792b632525aa" class="zoom-jersey">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Trapstar Jersey" data-hu="Trapstar Mez">Trapstar Jersey</h3>
+				<p>
+					<span data-en="Size: S" data-hu="Méret: S">Size: S</span><br>
+					<strong data-en="Price: $24.68" data-hu="Ár: 7 990 Ft">Price: $24.68</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8385258848-trapstar-london-monogram-football-jersey" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
-        <!-- NIKE TN AIR MAX BEIGE -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8375976406-nike-tn-air-max-beige" target="_blank">
-                    <img src="https://images1.vinted.net/t/06_017df_iUfu9sq9CjPNuDe1LUPoen6c/f800/1773515795.webp?s=2b039b1cbf01400d08b07a32a9d03f919f781175" class="zoom-pants" alt="Nike TN Air Max Beige">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Nike TN Air Max Beige" data-hu="Nike TN Air Max Beige">Nike TN Air Max Beige</h3>
-                <p>
-                    <span data-en="Size: 41 EUR" data-hu="Méret: 41 EUR">Size: 41</span><br>
-                    <strong data-en="Price: $77.18" data-hu="Ár: 24 990Ft">Price: $77.18</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8375976406-nike-tn-air-max-beige" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8371240738-denim-tears-pants" target="_blank">
+					<img src="https://images1.vinted.net/t/05_01e00_RsvWPAyBxWoBfAWr8rCNXHUc/f800/1773515696.webp?s=0aac31ca8e62940523a361b6bffff0936bf739db" class="zoom-pants">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Denim Tears Pants" data-hu="Denim Tears Nadrág">Denim Tears Pants</h3>
+				<p>
+					<span data-en="Size: M" data-hu="Méret: M">Size: M</span><br>
+					<strong data-en="Price: $21.59" data-hu="Ár: 6 990 Ft">Price: $21.59</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8371240738-denim-tears-pants" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
-        <!-- Corteiz 5 Star Cap Pink -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8371229179-corteiz-5-star-cap-pink" target="_blank">
-                    <img src="https://images1.vinted.net/t/05_0172e_GLRLwzf6q6TmpcVSLMEDJa3n/f800/1773515920.webp?s=2cd093bdf43dc4cde6b357de4ea13d4062cbe517" class="zoom-pants" alt="Nike TN Air Max Beige">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Corteiz 5 Star Cap Pink" data-hu="Corteiz 5 Star Sapka Rózsaszín">Corteiz 5 Star Cap Pink</h3>
-                <p>
-                    <span data-en=" Size:55-60 Cm" data-hu="Méret: 55-60 Cm ">Size: 55-60 Cm</span><br>
-                    <strong data-en="Price: $21.59" data-hu="Ár: 6 990Ft">Price: $21.59</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8371229179-corteiz-5-star-cap-pink" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
-        
-        <!-- Sprayground Táska -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8374295648-sprayground-taska" target="_blank">
-                    <img src="https://images1.vinted.net/t/06_0010f_EtGhmV2UAJ2smhvwcBGxWyc1/f800/1773516205.webp?s=c2678cb096c3544075276a1626240bfdbe6ff58d" class="zoom-pants" alt="Nike TN Air Max Beige">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Sprayground Backpack" data-hu="Sprayground Táska">Sprayground Backpack</h3>
-                <p>
-                    <span data-en=" Size: Changable" data-hu="Méret: Változtatható">Size: Changeable</span><br>
-                    <strong data-en="Price: $34.34" data-hu="Ár: 11 118Ft">Price: $34.34</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8374295648-sprayground-taska" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8375976406-nike-tn-air-max-beige" target="_blank">
+					<img src="https://images1.vinted.net/t/06_017df_iUfu9sq9CjPNuDe1LUPoen6c/f800/1773515795.webp?s=2b039b1cbf01400d08b07a32a9d03f919f781175" class="zoom-pants">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Nike TN Air Max Beige" data-hu="Nike TN Air Max Beige">Nike TN Air Max Beige</h3>
+				<p>
+					<span data-en="Size: 41 EUR" data-hu="Méret: 41 EUR">Size: 41</span><br>
+					<strong data-en="Price: $77.18" data-hu="Ár: 24 990Ft">Price: $77.18</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8375976406-nike-tn-air-max-beige" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
-        <!-- Denim Tears Set -->
-        <div class="product-card">
-            <div class="img-container">
-                <a href="https://www.vinted.com/items/8371207459-denim-tears-tracksuit" target="_blank">
-                    <img src="https://images1.vinted.net/t/06_021cd_myEZ7oK6sG7xJXPm536kxU3f/f800/1773516049.webp?s=f5231235784aa994bb062e6b269dc038b112c95d" class="zoom-pants" alt="Nike TN Air Max Beige">
-                </a>
-            </div>
-            <div class="card-info">
-                <h3 data-en="Denim Tears Set" data-hu="Denim Tears Szett">Denim Tears Set</h3>
-                <p>
-                    <span data-en=" Size: M" data-hu="Méret: M">Méret: M</span><br>
-                    <strong data-en="Price: $52.47" data-hu="Ár: 16 990Ft">Price: $52.47</strong>
-                </p>
-                <a href="https://www.vinted.com/items/8371207459-denim-tears-tracksuit" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
-            </div>
-        </div>
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8371229179-corteiz-5-star-cap-pink" target="_blank">
+					<img src="https://images1.vinted.net/t/05_0172e_GLRLwzf6q6TmpcVSLMEDJa3n/f800/1773515920.webp?s=2cd093bdf43dc4cde6b357de4ea13d4062cbe517" class="zoom-pants">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Corteiz 5 Star Cap Pink" data-hu="Corteiz 5 Star Sapka Rózsaszín">Corteiz 5 Star Cap Pink</h3>
+				<p>
+					<span data-en="Size:55-60 Cm" data-hu="Méret: 55-60 Cm">Size: 55-60 Cm</span><br>
+					<strong data-en="Price: $21.59" data-hu="Ár: 6 990Ft">Price: $21.59</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8371229179-corteiz-5-star-cap-pink" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8374295648-sprayground-taska" target="_blank">
+					<img src="https://images1.vinted.net/t/06_0010f_EtGhmV2UAJ2smhvwcBGxWyc1/f800/1773516205.webp?s=c2678cb096c3544075276a1626240bfdbe6ff58d" class="zoom-pants">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Sprayground Backpack" data-hu="Sprayground Táska">Sprayground Backpack</h3>
+				<p>
+					<span data-en="Size: Changeable" data-hu="Méret: Változtatható">Size: Changeable</span><br>
+					<strong data-en="Price: $34.34" data-hu="Ár: 11 118Ft">Price: $34.34</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8374295648-sprayground-taska" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
+		<div class="product-card">
+			<div class="img-container">
+				<a href="https://www.vinted.com/items/8371207459-denim-tears-tracksuit" target="_blank">
+					<img src="https://images1.vinted.net/t/06_021cd_myEZ7oK6sG7xJXPm536kxU3f/f800/1773516049.webp?s=f5231235784aa994bb062e6b269dc038b112c95d" class="zoom-pants">
+				</a>
+			</div>
+			<div class="card-info">
+				<h3 data-en="Denim Tears Set" data-hu="Denim Tears Szett">Denim Tears Set</h3>
+				<p>
+					<span data-en="Size: M" data-hu="Méret: M">Méret: M</span><br>
+					<strong data-en="Price: $52.47" data-hu="Ár: 16 990Ft">Price: $52.47</strong>
+				</p>
+				<a href="https://www.vinted.com/items/8371207459-denim-tears-tracksuit" class="sub-btn" data-en="Buy Now" data-hu="Megveszem">Buy Now</a>
+			</div>
+		</div>
 
-    </div>
-
+	</div>
 
 	<script>
-
 		function updateLanguage() {
-
 			const lang = document.getElementById('langSwitch').value;
-
 			document.querySelectorAll('[data-en]').forEach(el => {
-
 				el.innerText = el.getAttribute(`data-${lang}`);
-
 			});
-
 		}
-
 	</script>
 
 </body>
