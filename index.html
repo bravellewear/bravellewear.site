@@ -49,16 +49,22 @@
 			transform: translateX(-50%);
 			font-size: 2rem;
 			font-weight: 900;
-			letter-spacing: 2px;
+			letter-spacing: 3px;
 			text-transform: uppercase;
 			color: #777;
 			text-decoration: none;
 			text-shadow: 0 0 10px rgba(255, 0, 0, 0.08);
 			transition: 0.25s;
 			z-index: 100;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			white-space: nowrap;
+		}
+
+		@media (max-width: 650px) {
+			.vinted-link {
+				font-size: 1.2rem;
+				letter-spacing: 1.5px;
+				top: 65px;
+			}
 		}
 
 		.vinted-link:hover {
