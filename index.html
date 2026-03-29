@@ -206,17 +206,18 @@
 
 		@media (max-width: 768px) {
 			html, body {
-				scroll-snap-type: y mandatory;
+				/* A proximity csak akkor ránt be, ha már NAGYON közel vagy a célhoz */
+				scroll-snap-type: y proximity; 
+				scroll-behavior: smooth;
 			}
 
 			.product-card {
 				scroll-snap-align: center;
-				scroll-snap-stop: always;
+				/* Kikapcsoljuk a kényszerített megállást, így simább az átmenet */
+				scroll-snap-stop: normal; 
+				margin-bottom: 20px; /* Kell egy kis hely a kártyák közt, hogy ne akadjanak össze */
 			}
 		}
-
-
-
 	</style>
 </head>
 
@@ -396,29 +397,37 @@
 	</script>
 
 	<script>
-		const mobileQuery = window.matchMedia("(max-width: 768px)");
+		const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-		function initMobileScroll() {
-			if (mobileQuery.matches) {
-				// Itt jön az IntersectionObserver kód, amit az előbb írtam
-				const cards = document.querySelectorAll('.product-card');
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							cards.forEach(c => c.classList.remove('active'));
-							entry.target.classList.add('active');
-						}
-					});
-				}, { threshold: 0.6 });
+		if (isMobile) {
+			const cards = document.querySelectorAll('.product-card');
+			let lastScrollTop = 0;
 
-				cards.forEach(card => observer.observe(card));
-			}
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					const st = window.pageYOffset || document.documentElement.scrollTop;
+					const scrollingDown = st > lastScrollTop;
+
+					if (entry.isIntersecting) {
+						// Csak akkor váltunk és snap-elünk, ha az adott irányba haladsz
+						// és a kártya legalább 50%-a már bent van
+						cards.forEach(c => c.classList.remove('active'));
+						entry.target.classList.add('active');
+						
+						// Finom snap: csak akkor húzza be, ha megálltál vagy lassulsz
+						entry.target.scrollIntoView({
+							behavior: "smooth",
+							block: "center"
+						});
+					}
+					lastScrollTop = st <= 0 ? 0 : st;
+				});
+			}, { 
+				threshold: 0.5 // Csak akkor reagál, ha a kártya fele már látszik
+			});
+
+			cards.forEach(card => observer.observe(card));
 		}
-
-		// Futás betöltéskor
-		initMobileScroll();
-
-
 	</script>
 </body>
 </html>
