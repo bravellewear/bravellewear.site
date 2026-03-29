@@ -204,24 +204,7 @@
 		}
 
 
-		@media (max-width: 768px) {
-			/* A szülő konténeren (lehet body vagy egy wrapper div) */
-			html, body {
-				scroll-snap-type: y mandatory; /* Kötelező megállás */
-				scroll-behavior: smooth;
-				overflow-y: scroll;
-				height: 100%;
-			}
-
-			.product-card {
-				scroll-snap-align: center; /* Mindig középre igazít */
-				scroll-snap-stop: always;  /* 🔥 EZ A KULCS: nem engedi átugrani a kártyákat gyors görgetésnél sem */
-				
-				/* Kell egy kis biztonsági távolság */
-				margin-bottom: 50px; 
-				min-height: 300px; /* Vagy amekkora a kártyád */
-			}
-		}
+		
 
 	</style>
 </head>
@@ -401,28 +384,6 @@
 
 	</script>
 
-	<script>
-		const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-		if (isMobile) {
-			const cards = document.querySelectorAll('.product-card');
-			
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					// Csak akkor aktiváljuk, ha a kártya nagy része (70%) látszik
-					if (entry.isIntersecting && entry.intersectionRatio >= 0.7) {
-						cards.forEach(c => c.classList.remove('active'));
-						entry.target.classList.add('active');
-					}
-				});
-			}, { 
-				threshold: [0.1, 0.7], // Több küszöbérték a precizitáshoz
-				rootMargin: "-10% 0px -10% 0px" // Kicsit szűkítjük a figyelést középre
-			});
-
-			cards.forEach(card => observer.observe(card));
-		}
-
-	</script>
+	
 </body>
 </html>
